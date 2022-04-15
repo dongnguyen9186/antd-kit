@@ -24,6 +24,6 @@ export const dot = () => (
     count={number('count', 100)}
     showZero={boolean('showZero', false)}
     overflowCount={number('overflowCount', 99)}
-    color={text('color', '')}
+    color={text('color', 'red')}
   />
 );

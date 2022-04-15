@@ -64,7 +64,6 @@ const iconSizes = {
   xxl: '32px'
 };
 
-
 const DEFAULT_THEME: ITheme = {
   fontSizes,
   fontWeights,

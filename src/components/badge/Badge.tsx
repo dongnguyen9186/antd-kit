@@ -32,6 +32,7 @@ const Badge: CompoundedComponent = forwardRef(
     return (
       <StyledBadge
         color={color}
+        ref={ref}
         count={count}
         dot={dot}
         offset={offset}
@@ -65,7 +66,7 @@ Badge.propTypes = {
 Badge.defaultProps = {
   children: null,
   color: undefined,
-  dotSize: "small",
+  dotSize: "medium",
   count: undefined,
   dot: false,
   offset: undefined,

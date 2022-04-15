@@ -1,20 +1,25 @@
-import React from 'react';
-import { Badge } from 'antd';
-import styled from 'styled-components';
+import React from "react";
+import { Badge } from "antd";
+import styled from "styled-components";
+import { SIZE } from "./types";
 
-const calcSize = (dotSize) => {
+const SMALL = '6px';
+const MEDIUM = '10px';
+const LARGE = '16px';
+
+const calcSize = (dotSize: SIZE) => {
   switch (dotSize) {
-    case 'small':
-      return '6px';
-    case 'medium':
-      return '10px';
+    case "small":
+      return SMALL;
+    case "medium":
+      return MEDIUM;
     default:
-      return '16px';
+      return LARGE;
   }
 };
 
 const StyledBadge = styled(({ dotSize, ...props }) => <Badge {...props} />)`
-  ${({ dot, dotSize }) =>
+  ${({ dot, dotSize }: { dot: boolean | undefined; dotSize: SIZE }) =>
     dot &&
     `
     .ant-badge-dot {
