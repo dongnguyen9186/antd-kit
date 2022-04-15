@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import stylePropType from "react-style-proptype";
 import { Badge as AntBadge } from "antd";
 import StyledBadge from "./Badge.styled";
-import { IBadgeProps } from "./typing";
+import { IBadgeProps } from "./types";
 
 interface CompoundedComponent
   extends React.ForwardRefExoticComponent<
@@ -32,6 +32,7 @@ const Badge: CompoundedComponent = forwardRef(
     return (
       <StyledBadge
         color={color}
+        ref={ref}
         count={count}
         dot={dot}
         offset={offset}
@@ -65,7 +66,7 @@ Badge.propTypes = {
 Badge.defaultProps = {
   children: null,
   color: undefined,
-  dotSize: "small",
+  dotSize: "medium",
   count: undefined,
   dot: false,
   offset: undefined,
