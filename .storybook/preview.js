@@ -1,4 +1,4 @@
-import "../src/theme/saleshood.less";
+import "../src/theming/saleshood.less";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
