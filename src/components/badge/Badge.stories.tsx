@@ -9,21 +9,25 @@ export default {
 };
 
 export const basic = () => (
-  <Badge
-    count={number("count", 100)}
-    showZero={boolean("showZero", false)}
-    overflowCount={number("overflowCount", 99)}
-    color={text("color", "")}
-  >
-    <button>99</button>
-  </Badge>
-);
-
-export const dot = () => (
-  <Badge
-    count={number('count', 100)}
-    showZero={boolean('showZero', false)}
-    overflowCount={number('overflowCount', 99)}
-    color={text('color', 'red')}
-  />
+  <div>
+    <div
+      style={{ display: "flex", width: 200, justifyContent: "space-between" }}
+    >
+      <Badge count={100} type="primary" />
+      <Badge count={100} type="secondary" />
+      <Badge count={100} type="danger" />
+      <Badge count={100} />
+    </div>
+    <div style={{ display: "flex", marginTop: 20 }}>
+      <div style={{ margin: "0 10px" }}>
+        <Badge dot type="primary" />
+      </div>
+      <div style={{ margin: "0 10px" }}>
+        <Badge dot type="danger" />
+      </div>
+      <div style={{ margin: "0 10px" }}>
+        <Badge dot type="success" />
+      </div>
+    </div>
+  </div>
 );
