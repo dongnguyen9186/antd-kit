@@ -4,7 +4,7 @@ import { Paragraph, Text, Title } from "./Typography.styled";
 
 const Typography: React.FC<TypographyProps> = ({ type = "body", ...props }) => {
   if (type === "body") {
-    return <Paragraph fontWeight={600} {...props} as="h5" />;
+    return <Paragraph fontWeight={600} {...props} />;
   }
   if (type === "label") {
     return <Text fontWeight={600} {...props} />;

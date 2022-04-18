@@ -14,3 +14,9 @@ Basic.args = {
   children: "Hello world",
   type: "h1",
 };
+
+Basic.parameters = {
+  controls: {
+    include: ["type", "fontWeight", "children"],
+  },
+};
