@@ -1,29 +1,38 @@
-import React from 'react';
-import { withKnobs, number, boolean, select, text } from '@storybook/addon-knobs';
-import Badge from './Badge';
+import {
+  withKnobs,
+  number,
+  boolean,
+  select,
+  text,
+} from "@storybook/addon-knobs";
+import Badge from "./Badge";
 
 export default {
-  title: '3. Components/Badge',
+  title: "3. Components/Badge",
   component: Badge,
   decorators: [withKnobs],
 };
 
-export const basic = () => (
+export const count = () => (
   <Badge
+    type={select(
+      "type",
+      ["primary", "secondary", "danger", "default", 'success'],
+      "primary"
+    )}
     count={number("count", 100)}
     showZero={boolean("showZero", false)}
     overflowCount={number("overflowCount", 99)}
-    color={text("color", "")}
-  >
-    <button>99</button>
-  </Badge>
+  />
 );
 
 export const dot = () => (
   <Badge
-    count={number('count', 100)}
-    showZero={boolean('showZero', false)}
-    overflowCount={number('overflowCount', 99)}
-    color={text('color', 'red')}
+    dot
+    type={select(
+      "type",
+      ["primary", "secondary", "danger", "default", "success"],
+      "primary"
+    )}
   />
 );
