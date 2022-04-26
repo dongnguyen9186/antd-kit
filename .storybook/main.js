@@ -1,33 +1,52 @@
+const path = require('path');
+const lessPath = path.resolve(__dirname, '../src/theme/variables.less');
+
 module.exports = {
-  stories: [
-    "../src/components/**/*.stories.tsx",
-  ],
+  stories: ["../src/components/**/*.stories.tsx"],
   webpackFinal: async (config, { configType }) => {
     config.module.rules.push({
       test: /\.less$/,
+      exclude:  /\.module\.less$/,
       use: [
-        require.resolve("style-loader"),
-        require.resolve("css-loader"),
-        // {
-        //   loader: require.resolve("css-loader"),
-        //   options: {
-        //     modules: true,
-        //     importLoaders: 1,
-        //     localIdentName: "[name]__[local]___[hash:base64:5]",
-        //   },
-        // },
+        'style-loader',
+        'css-loader',
         {
-          loader: require.resolve("less-loader"),
+          loader: 'less-loader',
           options: {
-            javascriptEnabled: true
+            javascriptEnabled: true,
           },
         },
       ],
     });
+
+    config.module.rules.push({
+      test: /\.module\.less$/,
+      include: [
+        path.resolve(__dirname, '../src/components'),
+      ],
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+            modules: true,
+          },
+        },
+        {
+          loader: 'less-loader',
+          options: {
+            javascriptEnabled: true,
+          },
+        },
+      ],
+    });
+
     return config;
   },
+
   addons: [
-    '@storybook/addon-knobs',
+    "@storybook/addon-knobs",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",

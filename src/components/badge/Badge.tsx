@@ -1,8 +1,7 @@
 import React, { forwardRef } from "react";
-import { Badge as AntBadge } from "antd";
-import StyledBadge, { getColor } from "./Badge.styled";
+import { Badge as AntBadge, Button } from "antd";
 import { IBadgeProps } from "./types";
-import DEFAULT_THEME from "../../theming/theme";
+import * as styles from "./Badge.module.less";
 
 interface CompoundedComponent
   extends React.ForwardRefExoticComponent<
@@ -13,20 +12,9 @@ interface CompoundedComponent
 
 const Badge: CompoundedComponent = forwardRef((props, ref) => {
   return (
-    <StyledBadge
-      {...props}
-      ref={ref}
-      style={{
-        backgroundColor: getColor(props.type || "default").bg,
-        color: getColor(props.type || "default").text,
-        fontWeight: DEFAULT_THEME.fontWeights.semibold,
-        fontSize: DEFAULT_THEME.fontSizes.xs,
-        lineHeight: DEFAULT_THEME.lineHeights.xs,
-        ...props.style,
-      }}
-    >
+    <AntBadge {...props} className={styles.badge}>
       {props.children}
-    </StyledBadge>
+    </AntBadge>
   );
 }) as CompoundedComponent;
 
