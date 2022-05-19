@@ -33,6 +33,7 @@
     "less-loader": "^5.0.0",
     "postcss": "^8.4.12",
     "rollup": "^2.70.1",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-import-css": "^3.0.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
