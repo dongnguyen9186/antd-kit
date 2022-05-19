@@ -24,16 +24,10 @@ const colors = {
 
 const Badge: CompoundedComponent = forwardRef((props, ref) => {
   return (
-    <AntBadge
-      {...props}
-      style={{
-        background: colors[props?.type || "primary"].bg,
-        color: colors[props?.type || "primary"].text,
-        fontWeight: 600,
-      }}
-    >
-      {props.children}
-    </AntBadge>
+   <>
+   <p>wqdwqd</p>
+   <Button>asdsadsad</Button>
+   </>
   );
 }) as CompoundedComponent;
 
