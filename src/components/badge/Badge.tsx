@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import { Badge as AntBadge, Button } from "antd";
 import { IBadgeProps } from "./types";
-import * as styles from "./Badge.module.less";
+import "./Badge.less";
 
 interface CompoundedComponent
   extends React.ForwardRefExoticComponent<
@@ -12,7 +12,7 @@ interface CompoundedComponent
 
 const Badge: CompoundedComponent = forwardRef((props, ref) => {
   return (
-    <AntBadge {...props} className={styles.badge}>
+    <AntBadge {...props}>
       {props.children}
     </AntBadge>
   );
