@@ -10,9 +10,28 @@ interface CompoundedComponent
   Ribbon: typeof AntBadge.Ribbon;
 }
 
+const colors = {
+  secondary: {
+    bg: '#DEE8F7', text: '#172B4D'
+  },
+  primary: {
+    bg: '#2D6EC8', text: '#FFFFFF'
+  },
+  danger: {
+    bg: '#D44020', text: '#FFFFFF'
+  }
+}
+
 const Badge: CompoundedComponent = forwardRef((props, ref) => {
   return (
-    <AntBadge {...props}>
+    <AntBadge
+      {...props}
+      style={{
+        background: colors[props?.type || "primary"].bg,
+        color: colors[props?.type || "primary"].text,
+        fontWeight: 600,
+      }}
+    >
       {props.children}
     </AntBadge>
   );
@@ -21,6 +40,7 @@ const Badge: CompoundedComponent = forwardRef((props, ref) => {
 Badge.Ribbon = AntBadge.Ribbon;
 
 Badge.defaultProps = {
+  type: 'primary',
   children: null,
   color: undefined,
   dotSize: "medium",
