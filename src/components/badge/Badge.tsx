@@ -12,15 +12,18 @@ interface CompoundedComponent
 
 const colors = {
   secondary: {
-    bg: '#DEE8F7', text: '#172B4D'
+    bg: "#DEE8F7",
+    text: "#172B4D",
   },
   primary: {
-    bg: '#2D6EC8', text: '#FFFFFF'
+    bg: "#2D6EC8",
+    text: "#FFFFFF",
   },
   danger: {
-    bg: '#D44020', text: '#FFFFFF'
-  }
-}
+    bg: "#D44020",
+    text: "#FFFFFF",
+  },
+};
 
 const Badge: CompoundedComponent = forwardRef((props, ref) => {
   return (
@@ -40,7 +43,7 @@ const Badge: CompoundedComponent = forwardRef((props, ref) => {
 Badge.Ribbon = AntBadge.Ribbon;
 
 Badge.defaultProps = {
-  type: 'primary',
+  type: "primary",
   children: null,
   color: undefined,
   dotSize: "medium",
@@ -53,5 +56,4 @@ Badge.defaultProps = {
   className: "",
   style: undefined,
 };
-
 export default Badge;
